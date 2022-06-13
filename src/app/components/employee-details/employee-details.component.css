@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+}
+.tableHeader {
+  text-align: left;
+  font: normal normal medium 18px/24px Roboto;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 1;
+  background-color: #42515f;
+}
+#tableMainDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#tableContainer{
+    width: 72vw;
+}
+::ng-deep .mat-card{
+    padding:0 !important;
+  }

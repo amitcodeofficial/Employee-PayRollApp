@@ -1,0 +1,270 @@
+<div id="main">
+  <form [formGroup]="registrationForm" (ngSubmit)="submit()">
+    <mat-card>
+      <div id="mainContainer">
+        <div id="mainHeader">
+          <mat-card-header id="headerTag">
+            <div>
+              <img
+                mat-card-sm-image
+                src="assets/images/empHeader.jpg"
+                id="empHeaderImg"
+              />
+            </div>
+            <div id="mainHeader">
+              <div id="empHeader">Employee</div>
+              <div id="payHeader">PayRoll</div>
+            </div>
+          </mat-card-header>
+        </div>
+      </div>
+    </mat-card>
+    <div id="mainSection">
+      <mat-card id="sectionCard">
+        <div>
+          <mat-card-title id="sectionTitle"
+            >Employee PayRoll Form</mat-card-title
+          >
+        </div>
+        <div id="nameField" class="font">
+          <div>
+            <span id="fontFrom">Name</span>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" [(ngModel)]="employee.name"/>
+              <mat-error *ngIf="registrationForm.get('name')?.invalid">
+                Name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div id="profileImgField">
+          <div class="profileHead">
+            <span class="font">Profile Image</span>
+          </div>
+          <div id="mainCheckBoxDiv">
+            <div>
+              <mat-radio-button
+                name="profileImg"
+                value="assets/images/flower.jpg"
+                (change)="selectedProfileImg($event.value)"
+                ><img
+                  class="imageDiv"
+                  mat-card-sm-image
+                  src="assets/images/flower.jpg"
+              /></mat-radio-button>
+            </div>
+            <div>
+              <mat-radio-button
+                name="profileImg"
+                value="assets/images/flower.jpg"
+                (change)="selectedProfileImg($event.value)"
+                ><img
+                  class="imageDiv"
+                  mat-card-sm-image
+                  src="assets/images/flower.jpg"
+              /></mat-radio-button>
+            </div>
+            <div>
+              <mat-radio-button
+                name="profileImg"
+                value="assets/images/flower.jpg"
+                (change)="selectedProfileImg($event.value)"
+                ><img
+                  class="imageDiv"
+                  mat-card-sm-image
+                  src="assets/images/flower.jpg"
+              /></mat-radio-button>
+            </div>
+            <div>
+              <mat-radio-button
+                name="profileImg"
+                value="assets/images/flower.jpg"
+                (change)="selectedProfileImg($event.value)"
+                ><img
+                  class="imageDiv"
+                  mat-card-sm-image
+                  src="assets/images/flower.jpg"
+              /></mat-radio-button>
+            </div>
+          </div>
+        </div>
+        <div id="genderField">
+          <div class="profileHead">
+            <span class="font">Gender</span>
+          </div>
+          <div>
+            <div id="genderRadioButton">
+              <div>
+                <mat-radio-button
+                  name="gender"
+                  value="Male"
+                  (change)="selectedGender($event.value)"
+                  ><span class="font">Male</span></mat-radio-button
+                >
+              </div>
+              <div>
+                <mat-radio-button
+                  name="gender"
+                  value="Female"
+                  (change)="selectedGender($event.value)"
+                  ><span class="font">Female</span></mat-radio-button
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="font" id="departmentField">
+          <div class="profileHead">
+            <span>Department</span>
+          </div>
+          <div id="depCheckBox">
+            <div *ngFor="let dept of departmentsList">
+              <mat-checkbox
+                (change)="selectedDepartment(dept)"
+                [checked]="dept.select"
+                [value]="dept.name"
+                class="example-margin"
+                >{{ dept.name }}</mat-checkbox
+              >
+            </div>
+            <!-- <div>
+              <mat-checkbox value="Sales" class="example-margin">Sales</mat-checkbox>
+            </div>
+            <div>
+              <mat-checkbox value="Finance" class="example-margin">Finance</mat-checkbox>
+            </div>
+            <div>
+              <mat-checkbox value="Engineer" class="example-margin">Engineer</mat-checkbox>
+            </div>
+            <div>
+              <mat-checkbox value="Others" class="example-margin">Others</mat-checkbox>
+            </div> -->
+          </div>
+        </div>
+        <div class="font" id="salaryField">
+          <div class="profileHead">
+            <span>Salary</span>
+          </div>
+          <div>
+            <mat-form-field style="width: 16.5vw" appearance="outline">
+              <mat-label>Select Salary</mat-label>
+              <mat-select
+                formControlName="selectSalary"
+                [(ngModel)]="employee.salary"
+              >
+                <mat-option value="10,000">10,000</mat-option>
+                <mat-option value="20,000">20,000</mat-option>
+                <mat-option value="30,000">30,000</mat-option>
+                <mat-option value="40,000">40,000</mat-option>
+                <mat-option value="50,000">50,000</mat-option>
+              </mat-select>
+              <mat-error *ngIf="registrationForm.get('selectSalary')?.invalid"
+                >Select a <strong>Salary</strong></mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="font" id="dateField">
+          <div class="profileHead" style="width: 8vw">
+            <span>Start Date</span>
+          </div>
+          <div id="dateOptionsDiv">
+            <div>
+              <mat-form-field id="dateOptions" appearance="outline">
+                <mat-label>Start Day</mat-label>
+                <mat-select
+                  formControlName="selectDay"
+                  [(ngModel)]="employee.startDay"
+                >
+                  <mat-option value="1">1</mat-option>
+                  <mat-option value="2">2</mat-option>
+                  <mat-option value="3">3</mat-option>
+                  <mat-option value="4">4</mat-option>
+                  <mat-option value="5">5</mat-option>
+                </mat-select>
+                <mat-error *ngIf="registrationForm.get('selectDay')?.invalid"
+                  >Select A <strong>Day</strong></mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field id="dateOptions" appearance="outline">
+                <mat-label>Start Month</mat-label>
+                <mat-select
+                  formControlName="selectMonth"
+                  [(ngModel)]="employee.startMonth"
+                >
+                  <mat-option value="1">1</mat-option>
+                  <mat-option value="2">2</mat-option>
+                  <mat-option value="3">3</mat-option>
+                  <mat-option value="4">4</mat-option>
+                  <mat-option value="5">5</mat-option>
+                </mat-select>
+                <mat-error *ngIf="registrationForm.get('selectMonth')?.invalid"
+                  >Select A <strong>Month</strong></mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field id="dateOptions" appearance="outline">
+                <mat-label>Start Year</mat-label>
+                <mat-select
+                  formControlName="selectYear"
+                  [(ngModel)]="employee.startYear"
+                >
+                  <mat-option value="2021">2021</mat-option>
+                  <mat-option value="2022">2022</mat-option>
+                  <mat-option value="2023">2023</mat-option>
+                  <mat-option value="2024">2024</mat-option>
+                  <mat-option value="2025">2025</mat-option>
+                </mat-select>
+                <mat-error *ngIf="registrationForm.get('selectYear')?.invalid"
+                  >Select A <strong>Year</strong></mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="font" id="notesField">
+          <div class="profileHead">
+            <span>Notes</span>
+          </div>
+          <div>
+            <mat-form-field id="textArea" appearance="outline">
+              <mat-label>Leave a Note</mat-label>
+              <textarea
+                matInput
+                formControlName="notes"
+                [(ngModel)]="employee.notes"
+              ></textarea>
+              <mat-error *ngIf="registrationForm.get('notes')?.invalid">
+                Notes is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div id="buttonField">
+          <div>
+            <a
+              mat-stroked-button
+              id="buttonTag"
+              routerLink="/employee-dashboard"
+              >Cancel</a
+            >
+          </div>
+          <div id="buttonField2">
+            <div>
+              <button type="submit" mat-stroked-button id="buttonTag">
+                Submit
+              </button>
+            </div>
+            <div><a mat-stroked-button id="buttonTag">Reset</a></div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </form>
+</div>

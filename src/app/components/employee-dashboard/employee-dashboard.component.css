@@ -1,0 +1,98 @@
+#mainDiv {
+  width: 100%;
+  height: 100%;
+  background-color: #00000029;
+  display: flex;
+  flex-direction: column;
+}
+#headerTag {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+#empHeaderImg {
+  width: 50px;
+  height: 47px;
+  opacity: 1;
+}
+#mainHeader {
+  display: flex;
+  flex-direction: column;
+}
+#empHeader {
+  width: 127px;
+  height: 20px;
+  text-align: left;
+  font: normal normal bold 22px/25px Montserrat;
+  letter-spacing: 0px;
+  color: #82a70c;
+  text-transform: capitalize;
+}
+#payHeader {
+  width: 107px;
+  height: 27px;
+  text-align: left;
+  font: normal normal bold 22px/25px Montserrat;
+  letter-spacing: 0px;
+  color: #42515f;
+  text-transform: capitalize;
+}
+#searchBtn {
+  background-color: #ffffff;
+  width: 3.2vw;
+  height: 5vh;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.material-icons.color_black {
+  color: black;
+}
+.material-icons.color_white {
+  color: white;
+}
+#topContainer {
+  width: 70vw;
+  height: 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#sectionTitle {
+  text-align: left;
+  font: normal normal bold 28px/25px Roboto;
+  letter-spacing: 0px;
+  color: #42515f;
+  opacity: 1;
+}
+#topMainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#buttonContainer {
+  width: 13vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#addBtn {
+  background-color: green;
+  width: 8.5vw;
+  height: 2.5vw;
+}
+#buttonFont {
+  text-align: left;
+  font: normal normal normal 0.9375vw/1.302vw Roboto;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  padding: 5px;
+}
+#buttonStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

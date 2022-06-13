@@ -1,0 +1,192 @@
+#main {
+  width: 100%;
+  height: 100%;
+  background-color: #00000029;
+  display: flex;
+  flex-direction: column;
+}
+.font {
+  text-align: left;
+  font: normal normal normal 18px/24px Roboto;
+  letter-spacing: 0px;
+  color: #42515f;
+  opacity: 1;
+}
+
+#headerTag {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+#empHeaderImg {
+  width: 50px;
+  height: 47px;
+  opacity: 1;
+}
+#mainHeader {
+  display: flex;
+  flex-direction: column;
+}
+#empHeader {
+  width: 127px;
+  height: 27px;
+  text-align: left;
+  font: normal normal bold 22px/25px Montserrat;
+  letter-spacing: 0px;
+  color: #82a70c;
+  text-transform: capitalize;
+}
+#payHeader {
+  width: 107px;
+  height: 27px;
+  text-align: left;
+  font: normal normal bold 22px/25px Montserrat;
+  letter-spacing: 0px;
+  color: #42515f;
+  text-transform: capitalize;
+}
+#mainSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sectionCard {
+  width: 60%;
+  height: 79.7vh;
+  /* 760px */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #f5f5f5;
+  border-radius: 8px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+}
+#sectionTitle {
+  padding-top: 35px;
+  padding-left: 100px;
+  text-align: left;
+  font: normal normal bold 28px/37px Roboto;
+  letter-spacing: 0px;
+  color: #42515f;
+  text-transform: capitalize;
+  opacity: 1;
+}
+#nameField {
+  margin-top: 35px;
+  margin-left: calc(9.5% - 10px);
+  max-width: 900px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+mat-form-field.mat-form-field {
+  margin-top: 10px;
+  margin-right: 60px;
+  width: 35vw;
+  font-size: 12px;
+}
+.imageDiv {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+}
+.profileHead {
+  width: 8.5vw;
+}
+#profileImgField {
+  width: 30vw;
+  margin-top: 30px;
+  margin-left: calc(9.5% - 10px);
+  display: flex;
+  justify-content: row;
+  align-items: center;
+}
+#mainCheckBoxDiv {
+  width: 20vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#genderField {
+  margin-top: 30px;
+  margin-left: calc(9.5% - 10px);
+  display: flex;
+}
+#genderRadioButton {
+  width: 9.5vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#departmentField {
+  margin-top: 40px;
+  margin-left: calc(9.5% - 10px);
+  display: flex;
+}
+#depCheckBox {
+  width: 29.5vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#salaryField {
+  margin-top: 30px;
+  margin-left: calc(9.5% - 10px);
+  width: 28vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#dateField{
+  margin-top: 15px;
+  margin-left: calc(9.5% - 10px);
+  width: 41.25vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#dateOptionsDiv{
+  width: 33vw;
+  display: flex;
+  justify-content: row;
+}
+#dateOptions{
+  width:8vw;
+}
+#notesField{
+  margin-left: calc(9.5% - 10px);
+  width: 48vw;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+#textArea{
+  width: 36.5vw;
+  font-size: 20px;
+}
+#buttonField{
+  margin-top:5px;
+  margin-left: calc(9.5% - 10px);
+  width: 45vw;
+  display: flex;
+  justify-content: space-between;
+}
+#buttonField2{
+  width: 20vw;
+  display: flex;
+  justify-content:space-between;
+}
+#buttonTag{
+  background-color:#E2E2E2;
+  padding: 5px;
+  width: 180px;
+  height: 45px;
+}

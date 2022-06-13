@@ -1,0 +1,55 @@
+<div id="mainDiv">
+  <mat-card>
+    <div id="mainContainer">
+      <div id="mainHeader">
+        <mat-card-header id="headerTag">
+          <div>
+            <img
+              mat-card-sm-image
+              src="assets/images/empHeader.jpg"
+              id="empHeaderImg"
+            />
+          </div>
+          <div id="mainHeader">
+            <div id="empHeader">Employee</div>
+            <div id="payHeader">PayRoll</div>
+          </div>
+        </mat-card-header>
+      </div>
+    </div>
+  </mat-card>
+  <div id="topMainDiv">
+    <div id="topContainer">
+      <div>
+        <mat-card-title id="sectionTitle">Employee Details</mat-card-title>
+      </div>
+      <div id="buttonContainer">
+        <div>
+          <button
+            mat-fab
+            color="primary"
+            aria-label="Example icon button with a delete icon"
+            id="searchBtn"
+          >
+            <mat-icon class="material-icons color_black">
+              search
+            </mat-icon>
+          </button>
+        </div>
+        <div>
+          <button mat-stroked-button (click)="addUserBtn()" id="addBtn">
+            <div id="buttonStyle">
+              <div id="buttonStyle">
+                <mat-icon class="material-icons color_white">add</mat-icon>
+              </div>
+              <div id="buttonStyle">
+                <span id="buttonFont">Add User</span>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
