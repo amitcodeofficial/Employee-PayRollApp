@@ -1,4 +1,6 @@
 <div id="main">
+  <!-- <app-item-output></app-item-output> -->
+  <!-- <app-employee-details style="display:none;" (event)="getEmployeeDetailToUpdate($event)"></app-employee-details> -->
   <form [formGroup]="registrationForm" (ngSubmit)="submit()">
     <mat-card>
       <div id="mainContainer">
@@ -33,7 +35,10 @@
           <div>
             <mat-form-field appearance="outline">
               <mat-label>Name</mat-label>
-              <input matInput formControlName="name" [(ngModel)]="employee.name"/>
+              <input
+                matInput
+                formControlName="name"
+              />
               <mat-error *ngIf="registrationForm.get('name')?.invalid">
                 Name is <strong>required</strong>
               </mat-error>
@@ -44,7 +49,8 @@
           <div class="profileHead">
             <span class="font">Profile Image</span>
           </div>
-          <div id="mainCheckBoxDiv">
+          <div>
+            <mat-radio-group formControlName="profileImg" id="mainCheckBoxDiv">
             <div>
               <mat-radio-button
                 name="profileImg"
@@ -89,6 +95,7 @@
                   src="assets/images/flower.jpg"
               /></mat-radio-button>
             </div>
+          </mat-radio-group>
           </div>
         </div>
         <div id="genderField">
@@ -96,7 +103,8 @@
             <span class="font">Gender</span>
           </div>
           <div>
-            <div id="genderRadioButton">
+            <div>
+              <mat-radio-group formControlName="gender" id="genderRadioButton">
               <div>
                 <mat-radio-button
                   name="gender"
@@ -113,6 +121,7 @@
                   ><span class="font">Female</span></mat-radio-button
                 >
               </div>
+            </mat-radio-group>
             </div>
           </div>
         </div>
@@ -125,9 +134,9 @@
               <mat-checkbox
                 (change)="selectedDepartment(dept)"
                 [checked]="dept.select"
-                [value]="dept.name"
+                [value]="dept.departmentName"
                 class="example-margin"
-                >{{ dept.name }}</mat-checkbox
+                >{{ dept.departmentName }}</mat-checkbox
               >
             </div>
             <!-- <div>
@@ -152,7 +161,7 @@
             <mat-form-field style="width: 16.5vw" appearance="outline">
               <mat-label>Select Salary</mat-label>
               <mat-select
-                formControlName="selectSalary"
+                formControlName="salary"
                 [(ngModel)]="employee.salary"
               >
                 <mat-option value="10,000">10,000</mat-option>
@@ -161,7 +170,7 @@
                 <mat-option value="40,000">40,000</mat-option>
                 <mat-option value="50,000">50,000</mat-option>
               </mat-select>
-              <mat-error *ngIf="registrationForm.get('selectSalary')?.invalid"
+              <mat-error *ngIf="registrationForm.get('salary')?.invalid"
                 >Select a <strong>Salary</strong></mat-error
               >
             </mat-form-field>
@@ -176,7 +185,7 @@
               <mat-form-field id="dateOptions" appearance="outline">
                 <mat-label>Start Day</mat-label>
                 <mat-select
-                  formControlName="selectDay"
+                  formControlName="startDay"
                   [(ngModel)]="employee.startDay"
                 >
                   <mat-option value="1">1</mat-option>
@@ -185,7 +194,7 @@
                   <mat-option value="4">4</mat-option>
                   <mat-option value="5">5</mat-option>
                 </mat-select>
-                <mat-error *ngIf="registrationForm.get('selectDay')?.invalid"
+                <mat-error *ngIf="registrationForm.get('startDay')?.invalid"
                   >Select A <strong>Day</strong></mat-error
                 >
               </mat-form-field>
@@ -194,7 +203,7 @@
               <mat-form-field id="dateOptions" appearance="outline">
                 <mat-label>Start Month</mat-label>
                 <mat-select
-                  formControlName="selectMonth"
+                  formControlName="startMonth"
                   [(ngModel)]="employee.startMonth"
                 >
                   <mat-option value="1">1</mat-option>
@@ -203,7 +212,7 @@
                   <mat-option value="4">4</mat-option>
                   <mat-option value="5">5</mat-option>
                 </mat-select>
-                <mat-error *ngIf="registrationForm.get('selectMonth')?.invalid"
+                <mat-error *ngIf="registrationForm.get('startMonth')?.invalid"
                   >Select A <strong>Month</strong></mat-error
                 >
               </mat-form-field>
@@ -212,7 +221,7 @@
               <mat-form-field id="dateOptions" appearance="outline">
                 <mat-label>Start Year</mat-label>
                 <mat-select
-                  formControlName="selectYear"
+                  formControlName="startYear"
                   [(ngModel)]="employee.startYear"
                 >
                   <mat-option value="2021">2021</mat-option>
@@ -221,7 +230,7 @@
                   <mat-option value="2024">2024</mat-option>
                   <mat-option value="2025">2025</mat-option>
                 </mat-select>
-                <mat-error *ngIf="registrationForm.get('selectYear')?.invalid"
+                <mat-error *ngIf="registrationForm.get('startYear')?.invalid"
                   >Select A <strong>Year</strong></mat-error
                 >
               </mat-form-field>

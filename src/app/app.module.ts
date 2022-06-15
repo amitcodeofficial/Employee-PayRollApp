@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeDashboardComponent } from './components/employee-dashboard/employee-dashboard.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, EmployeeRegistrationComponent, EmployeeDashboardComponent, EmployeeDetailsComponent],
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatChipsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

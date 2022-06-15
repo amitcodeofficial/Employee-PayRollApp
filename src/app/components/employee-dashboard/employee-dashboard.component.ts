@@ -12,6 +12,6 @@ export class EmployeeDashboardComponent implements OnInit {
   ngOnInit(): void {}
 
   addUserBtn(){
-    this.router.navigateByUrl("/employee-registration").then(() => {window.location.reload();});
+    this.router.navigateByUrl("/employee-registration");
   }
 }
