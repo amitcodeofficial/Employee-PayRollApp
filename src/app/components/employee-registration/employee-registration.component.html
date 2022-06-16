@@ -38,6 +38,7 @@
               <input
                 matInput
                 formControlName="name"
+                [(ngModel)]="tempEmployeeU.name"
               />
               <mat-error *ngIf="registrationForm.get('name')?.invalid">
                 Name is <strong>required</strong>
@@ -50,12 +51,11 @@
             <span class="font">Profile Image</span>
           </div>
           <div>
-            <mat-radio-group formControlName="profileImg" id="mainCheckBoxDiv">
+            <mat-radio-group formControlName="profileImg" [(ngModel)]="tempEmployeeU.profileImg" id="mainCheckBoxDiv">
             <div>
               <mat-radio-button
                 name="profileImg"
                 value="assets/images/flower.jpg"
-                (change)="selectedProfileImg($event.value)"
                 ><img
                   class="imageDiv"
                   mat-card-sm-image
@@ -66,7 +66,6 @@
               <mat-radio-button
                 name="profileImg"
                 value="assets/images/flower.jpg"
-                (change)="selectedProfileImg($event.value)"
                 ><img
                   class="imageDiv"
                   mat-card-sm-image
@@ -77,7 +76,6 @@
               <mat-radio-button
                 name="profileImg"
                 value="assets/images/flower.jpg"
-                (change)="selectedProfileImg($event.value)"
                 ><img
                   class="imageDiv"
                   mat-card-sm-image
@@ -88,7 +86,6 @@
               <mat-radio-button
                 name="profileImg"
                 value="assets/images/flower.jpg"
-                (change)="selectedProfileImg($event.value)"
                 ><img
                   class="imageDiv"
                   mat-card-sm-image
@@ -104,12 +101,11 @@
           </div>
           <div>
             <div>
-              <mat-radio-group formControlName="gender" id="genderRadioButton">
+              <mat-radio-group formControlName="gender" [(ngModel)]="tempEmployeeU.gender" id="genderRadioButton">
               <div>
                 <mat-radio-button
                   name="gender"
                   value="Male"
-                  (change)="selectedGender($event.value)"
                   ><span class="font">Male</span></mat-radio-button
                 >
               </div>
@@ -117,7 +113,6 @@
                 <mat-radio-button
                   name="gender"
                   value="Female"
-                  (change)="selectedGender($event.value)"
                   ><span class="font">Female</span></mat-radio-button
                 >
               </div>
@@ -162,7 +157,7 @@
               <mat-label>Select Salary</mat-label>
               <mat-select
                 formControlName="salary"
-                [(ngModel)]="employee.salary"
+                [(ngModel)]="tempEmployeeU.salary"
               >
                 <mat-option value="10,000">10,000</mat-option>
                 <mat-option value="20,000">20,000</mat-option>
@@ -186,7 +181,7 @@
                 <mat-label>Start Day</mat-label>
                 <mat-select
                   formControlName="startDay"
-                  [(ngModel)]="employee.startDay"
+                  [(ngModel)]="tempEmployeeU.startDay"
                 >
                   <mat-option value="1">1</mat-option>
                   <mat-option value="2">2</mat-option>
@@ -204,7 +199,7 @@
                 <mat-label>Start Month</mat-label>
                 <mat-select
                   formControlName="startMonth"
-                  [(ngModel)]="employee.startMonth"
+                  [(ngModel)]="tempEmployeeU.startMonth"
                 >
                   <mat-option value="1">1</mat-option>
                   <mat-option value="2">2</mat-option>
@@ -222,7 +217,7 @@
                 <mat-label>Start Year</mat-label>
                 <mat-select
                   formControlName="startYear"
-                  [(ngModel)]="employee.startYear"
+                  [(ngModel)]="tempEmployeeU.startYear"
                 >
                   <mat-option value="2021">2021</mat-option>
                   <mat-option value="2022">2022</mat-option>
@@ -247,7 +242,7 @@
               <textarea
                 matInput
                 formControlName="notes"
-                [(ngModel)]="employee.notes"
+                [(ngModel)]="tempEmployeeU.notes"
               ></textarea>
               <mat-error *ngIf="registrationForm.get('notes')?.invalid">
                 Notes is <strong>required</strong>

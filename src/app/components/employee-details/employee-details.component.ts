@@ -6,6 +6,7 @@ import { map, Observable } from 'rxjs';
 import { EmployeeResponse } from '../model/employeeResponse';
 import { EmployeeDate } from '../model/employeeDate';
 import { Router } from '@angular/router';
+import { EmployeeSharingService } from '../../service/employee-sharing.service';
 
 @Component({
   selector: 'app-employee-details',
@@ -15,7 +16,8 @@ import { Router } from '@angular/router';
 export class EmployeeDetailsComponent implements OnInit {
   constructor(
     private employeeHttpService: EmployeeHttpService,
-    private router: Router
+    private router: Router,
+    private employeeSharing: EmployeeSharingService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class EmployeeDetailsComponent implements OnInit {
   employeeDetails: Employee[] = [];
 
   employeeResponse: EmployeeResponse = new EmployeeResponse([]);
+
 
   date: string[] = [];
   employeeDate: EmployeeDate = new EmployeeDate('');
@@ -58,8 +61,8 @@ export class EmployeeDetailsComponent implements OnInit {
     });
   }
 
-  deleteEmployeeFromTable(name: string) {
-    this.employeeHttpService.deleteEmployee(name).subscribe((data) => {
+  deleteEmployeeFromTable(id: number) {
+    this.employeeHttpService.deleteEmployee(id).subscribe((data) => {
       this.employeeResponse.data = data;
       console.log(this.employeeResponse.data);
     });
@@ -67,14 +70,12 @@ export class EmployeeDetailsComponent implements OnInit {
 
   // @Output() event = new EventEmitter<any>();
 
-  updateEmployee(name: string) {
-    this.employeeUpdate = this.employeeDetails.filter(
-      (data) => data.name === name
-    );
+  updateEmployee(employee: Employee) {
+
     console.log(this.employeeUpdate);
     // this.event.emit(this.employeeUpdate);
-    this.employeeHttpService.sendEmployeeDetails(this.employeeUpdate);
-    this.router
-      .navigateByUrl('/employee-registration');
+    // this.employeeHttpService.sendEmployeeDetails(this.employeeUpdate);
+    this.employeeSharing.sendInfo(employee);
+    this.router.navigateByUrl('/employee-registration');
   }
 }

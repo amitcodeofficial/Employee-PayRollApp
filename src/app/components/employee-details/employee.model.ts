@@ -1,6 +1,7 @@
 import { Department } from './employee-department.model';
 
 export class Employee {
+  id: number;
   profileImg: string;
   name: string;
   gender: string;
@@ -12,6 +13,7 @@ export class Employee {
   notes: string;
 
   constructor(
+    id: number,
     profileImg: string,
     name: string,
     gender: string,
@@ -20,8 +22,9 @@ export class Employee {
     startDay: string,
     startMonth: string,
     startYear: string,
-    notes: string
+    notes: string | ''
   ) {
+    this.id = id;
     this.profileImg = profileImg;
     this.name = name;
     this.gender = gender;
