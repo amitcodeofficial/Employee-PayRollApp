@@ -20,9 +20,10 @@ import { EmployeeDashboardComponent } from './components/employee-dashboard/empl
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { EmployeeDatepipePipe } from './pipe/employee-datepipe.pipe';
 
 @NgModule({
-  declarations: [AppComponent, EmployeeRegistrationComponent, EmployeeDashboardComponent, EmployeeDetailsComponent],
+  declarations: [AppComponent, EmployeeRegistrationComponent, EmployeeDashboardComponent, EmployeeDetailsComponent, EmployeeDatepipePipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
